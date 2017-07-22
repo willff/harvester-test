@@ -5,10 +5,10 @@ alfy.fetch('http://matrix.topdish.us/categories/all').then(data => {
 	const cats = data.categories;
 	const items = alfy
 		.inputMatches(cats, 'category')
-		.map((x, index) => ({
+		.map(x => ({
 			title: x.category,
 			subtitle: x.category,
-			arg: index,
+			arg: x.category,
 		}));
 
 	alfy.output(items);
