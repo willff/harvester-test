@@ -2,7 +2,6 @@
 const alfy = require('alfy');
 
 alfy.fetch('http://matrix.topdish.us/categories/all').then(data => {
-	console.info('DATA: ', data.categories); // wf
 	const items = alfy
 		.inputMatches(data.categories, 'title')
 		.map((x, index) => ({
@@ -11,5 +10,6 @@ alfy.fetch('http://matrix.topdish.us/categories/all').then(data => {
 			arg: index,
 		}));
 
+		console.info('items: ', items); // wf
 	alfy.output(items);
 });
