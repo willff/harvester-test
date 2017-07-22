@@ -1,13 +1,12 @@
 'use strict';
 const alfy = require('alfy');
 
-alfy.fetch('jsonplaceholder.typicode.com/posts').then(data => {
+alfy.fetch('http://matrix.topdish.us/categories/all').then(data => {
+	console.info('data: ', data.categories); // wf
 	const items = alfy
-		.inputMatches(data, 'title')
+		.inputMatches(data.categories, 'title')
 		.map(x => ({
-			title: x.title,
-			subtitle: x.body,
-			arg: x.id
+			title: x.category,
 		}));
 
 	alfy.output(items);
