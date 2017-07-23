@@ -8,7 +8,7 @@ alfy.fetch('http://matrix.topdish.us/categories/all').then(data => {
 		.map(x => ({
 			title: x.category,
 			subtitle: x.category,
-			arg: x.category,
+			arg: `cat: ${x.category}`,
 		}));
 
 	alfy.output(items);
